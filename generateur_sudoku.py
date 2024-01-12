@@ -145,14 +145,15 @@ class SudokuGUI:
                 cell_label = tk.Label(self.master, text=str(cell_value), width=4, height=2, relief="solid", font=("Helvetica", 16, "bold"))
                 cell_label.grid(row=i, column=j)
 
-temps_debut = time.time()
-remplir(tableau, 0, 0)
-temps_fin = time.time()
-temps = temps_fin - temps_debut #chronometre le temps de génération
-#print(temps)
-for i in range(9):
-    print(tableau[i])
-choisir_diff(tableau)
-root = tk.Tk()
-app = SudokuGUI(root, tableau)
-root.mainloop()
+if __name__ == '__main__':
+    temps_debut = time.time()
+    remplir(tableau, 0, 0)
+    temps_fin = time.time()
+    temps = temps_fin - temps_debut #chronometre le temps de génération
+    #print(temps)
+    for i in range(9):
+        print(tableau[i])
+    choisir_diff(tableau)
+    root = tk.Tk()
+    app = SudokuGUI(root, tableau)
+    root.mainloop()
